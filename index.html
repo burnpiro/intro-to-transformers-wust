@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="dist/custom.css">
   <link rel="stylesheet" href="plugin/pointer/pointer.css">
   <link rel="stylesheet" href="plugin/drawer/drawer.css">
-  <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="dist/theme/wust-theme.css" id="theme">
 
   <!-- Theme used for syntax highlighting of code -->
   <link rel="stylesheet" href="css/highlight/isbl-editor-light.css">
@@ -21,45 +21,25 @@
 <div class="reveal">
   <div class="slides">
     <section class="main-slide">
-      <h2>Presentation Template</h2>
-      <small>Authors...</small>
+      <p class="heading">Not so short introduction to Attention and Transformers</p>
+      <small>By Kemal Erdem</small>
     </section>
-    <section>
-      <h2>Presentation pointer</h2>
-      <h5>("Q" for pointer)</h5>
-      <a href="https://github.com/burnpiro/reveal-pointer">Check plugin's page for details</a>
+    <section data-background-iframe="https://erdem.pl/diagrams/rnn-diagram/">
     </section>
-    <section class="full-width-slide">
-      <h2>Drawing board </h2>
-      <h5>("T" to toggle drawing board)</h5>
-      <p class="small">("D" to toggle drawing)</p>
-      <p class="small">("Ctrl + z" to remove last line)</p>
-      <p class="small">"1", "2", "3", "4" to change colors<br/>
-        (depends on your color list, if you have 5 colors then 1,2,3,4,5 etc)</p>
-      <a class="small" href="https://github.com/burnpiro/reveal-drawer">Check plugin's page for details</a>
+    <section data-background-iframe="https://erdem.pl/diagrams/rnn-with-attention/">
     </section>
-    <section class="full-width-compressed-slide">
-      <h2>Slide 1</h2>
-      <p class="fragment">
-        ABC
-        $$
-        L_{a}T_{e}X
-        $$
-      </p>
-      <pre><code data-trim data-noescape>
-(def lazy-fib
-  (concat
-   [0 1]
-   ((fn rfib [a b]
-        (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
-  </code></pre>
+    <section data-background-iframe="https://erdem.pl/diagrams/image-caption-with-attention/">
+    </section>
+    <section data-background-iframe="https://erdem.pl/diagrams/positional-encoding/">
+    </section>
+    <section data-background-iframe="https://erdem.pl/diagrams/attention-layer/">
     </section>
     <section>
       <h2>Thanks</h2>
       <blockquote>"There's no such thing as a stupid question!"</blockquote>
       <p>
-        <small>Authors</small><br/>
-        <small><a href="">Links</a></small><br/>
+        <small>Kemal Erdem</small><br/>
+        <small><a href="https://erdem.pl">https://erdem.pl</a></small><br/>
       </p>
     </section>
   </div>
@@ -122,7 +102,7 @@
     pointer: {
       color: "red",
       pointerSize: 18,
-      alwaysVisible: true
+      alwaysVisible: false
     },
     drawer: {
       toggleBoardKey: "t",

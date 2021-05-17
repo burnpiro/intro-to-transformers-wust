@@ -1,4 +1,10 @@
-# [RevealJS](https://revealjs.com/) presentation template [Demo](https://burnpiro.github.io/presentation-template/#/)
+# Not so short introduction to Attention and Transformers
+## WUST Lecture
+
+Online Slides: [https://burnpiro.github.io/intro-to-transformers-wust/](https://burnpiro.github.io/intro-to-transformers-wust/)
+
+
+### Created with [Presentation template](https://github.com/burnpiro/presentation-template) and [RevealJS](https://revealjs.com/)
 
 This presentation template is using RevealJS library with additional plugins:
 
