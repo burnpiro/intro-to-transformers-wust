@@ -20,21 +20,197 @@
 <body>
 <div class="reveal">
   <div class="slides">
-    <section class="main-slide">
+    <section data-menu-title="Title Slide" class="main-slide">
       <p class="heading">Not so short introduction to Attention and Transformers</p>
       <small>By Kemal Erdem</small>
     </section>
-    <section data-background-iframe="https://erdem.pl/diagrams/rnn-diagram/">
+    <section data-menu-title="Sequence-to-Sequence translation using RNNs" data-background-iframe="https://erdem.pl/diagrams/rnn-diagram/">
     </section>
-    <section data-background-iframe="https://erdem.pl/diagrams/rnn-with-attention/">
+    <section data-menu-title="Sequence-to-Sequence with Attention" data-background-iframe="https://erdem.pl/diagrams/rnn-with-attention/">
     </section>
-    <section data-background-iframe="https://erdem.pl/diagrams/image-caption-with-attention/">
+    <section data-menu-title="Attention weights visualization">
+      <p class="heading-secondary">Attention weights visualization</p>
+      <img src="assets/attention-weights-heatmap.png" alt="Attention weights visualization" class="r-stretch">
+      <figure>
+        <figcaption>Figure 1: Attention weights for English to French translation, Source: <a href="https://arxiv.org/abs/1409.0473">Neural Machine Translation by Jointly Learning to Align and Translate</a></figcaption>
+      </figure>
     </section>
-    <section data-background-iframe="https://erdem.pl/diagrams/positional-encoding/">
+    <section data-menu-title="Image Captioning with Attention" data-background-iframe="https://erdem.pl/diagrams/image-caption-with-attention/">
     </section>
-    <section data-background-iframe="https://erdem.pl/diagrams/attention-layer/">
+    <section data-menu-title="Soft attention">
+      <p class="heading-secondary">Soft attention</p>
+      <img src="assets/show-attend-soft-example.png" alt="Soft attention" class="r-stretch">
+      <figure>
+        <figcaption>Figure 2: Image attention visualization, white regions have higher value of the attention weight, Source:  <a target="_blank" href="https://arxiv.org/abs/1502.03044">Show, Attend, and Tell: Neural Image Caption Generation with Visual Attention</a> </figcaption>
+      </figure>
     </section>
-    <section>
+    <section data-menu-title="Hard attention">
+      <p class="heading-secondary">Hard attention</p>
+      <img src="assets/show-attend-hard-example.png" alt="Hard attention" class="r-stretch">
+      <figure>
+        <figcaption>Figure 3: Hard attention visualization, white regions are the regions which model attends to, Source:  <a target="_blank" href="https://arxiv.org/abs/1502.03044">Show, Attend, and Tell: Neural Image Caption Generation with Visual Attention</a> </figcaption>
+      </figure>
+    </section>
+    <section data-menu-title="Abstracting Attention Layer" data-background-iframe="https://erdem.pl/diagrams/attention-layer/">
+    </section>
+    <section data-menu-title="Transformer Architecture">
+      <p class="heading-secondary">Transformer Architecture</p>
+      <img src="assets/transformer.png" alt="Transformer Architecture" class="r-stretch">
+    </section>
+    <section data-menu-title="Positional Encoding in Transformers" data-background-iframe="https://erdem.pl/diagrams/positional-encoding/">
+    </section>
+    <section data-menu-title="Positional Encoding values">
+      <p class="heading-secondary">Values Visualization</p>
+      <img src="assets/position-values-20.png" alt="Hard attention" class="r-stretch">
+      <figure>
+        <figcaption>Figure 4: Positional Encoding values for first 20 positions, Generated with the use of <a href="https://www.tensorflow.org/tutorials/text/transformer#positional_encoding" target="_blank">Tensorflow - Positional encoding</a> code</figcaption>
+      </figure>
+    </section>
+    <section data-menu-title="Positional Encoding further">
+      <p class="heading-secondary">Values Visualization</p>
+      <img src="assets/position-values-45k.png" alt="Hard attention" class="r-stretch">
+      <figure>
+        <figcaption>Figure 5: Positional Encoding periods for further indexes, Generated with the use of <a href="https://www.tensorflow.org/tutorials/text/transformer#positional_encoding" target="_blank">Tensorflow - Positional encoding</a> code</figcaption>
+      </figure>
+    </section>
+    <section data-menu-title="Masked Attention">
+      <p class="heading-tertiary">Masked Attention - <b><i>"I can't see the future"</i></b></p>
+      <img src="assets/masked-attention.png" alt="Masked Attention" class="r-stretch">
+      <figure>
+        <figcaption>Figure 6: Masked Self-Attention Layer</figcaption>
+      </figure>
+    </section>
+    <section data-menu-title="Multi-Headed Self-Attention">
+      <p class="heading-tertiary">Multi-Headed Self-Attention</p>
+      <img src="assets/transformer_multi-headed_self-attention-recap.png" alt="Masked Attention" class="r-stretch">
+      <figure>
+        <figcaption>Figure 7: Multi-head processing, Source: Jay Alammar, <a href="http://jalammar.github.io/illustrated-transformer/" target="_blank">The Illustrated Transformer</a>, 2019</figcaption>
+      </figure>
+    </section>
+    <section data-menu-title="Architecture Recap">
+      <p class="heading-secondary">Architecture Recap</p>
+      <img src="assets/transformer-full.png" alt="Architecture Transformer" class="r-stretch">
+      <figure>
+        <figcaption>Figure 8: The Transformer - model architecture., Source: Vaswani et al, <a href="https://arxiv.org/pdf/1706.03762.pdf" target="_blank">"Attention Is All You Need"</a>, NeurIPS 2017</figcaption>
+      </figure>
+    </section>
+    <section data-menu-title="Encoder Block">
+      <p class="heading-tertiary">Encoder Block</p>
+      <img src="assets/transformer_resideual_layer_norm_2.png" alt="Encoder Block" class="r-stretch">
+      <figure>
+        <figcaption>Figure 9: Encoder Block structure with residual connection and normalization, Source: Jay Alammar, <a href="http://jalammar.github.io/illustrated-transformer/" target="_blank">The Illustrated Transformer</a>, 2019</figcaption>
+      </figure>
+    </section>
+    <section data-menu-title="Encoder-Decoder">
+      <p class="heading-tertiary">Encoder-Decoder</p>
+      <img src="assets/transformer_resideual_layer_norm_3.png" alt="Encoder-Decoder" class="r-stretch">
+      <figure>
+        <figcaption>Figure 10: Stacked encoders with connection to stacked decoders, Source: Jay Alammar, <a href="http://jalammar.github.io/illustrated-transformer/" target="_blank">The Illustrated Transformer</a>, 2019</figcaption>
+      </figure>
+    </section>
+    <section data-menu-title="First timestep">
+      <p class="heading-tertiary">First timestep</p>
+      <img src="assets/transformer_decoding_1.gif" alt="First timestep" class="r-stretch">
+      <figure>
+        <figcaption>Figure 11: Generating output for the first timestep, Source: Jay Alammar, <a href="http://jalammar.github.io/illustrated-transformer/" target="_blank">The Illustrated Transformer</a>, 2019</figcaption>
+      </figure>
+    </section>
+    <section data-menu-title="Deconding while output">
+      <p class="heading-tertiary">Deconding while output</p>
+      <img src="assets/transformer_decoding_2.gif" alt="Decoding while output" class="r-stretch">
+      <figure>
+        <figcaption>Figure 12: Step by step generation of the output until the <b>EOS</b> token returned, Source: Jay Alammar, <a href="http://jalammar.github.io/illustrated-transformer/" target="_blank">The Illustrated Transformer</a>, 2019</figcaption>
+      </figure>
+    </section>
+    <section data-menu-title="The output">
+      <p class="heading-tertiary">The output</p>
+      <img src="assets/transformer_decoder_output_softmax.png" alt="Decoder output" class="r-stretch">
+      <figure>
+        <figcaption>Figure 13: Output of the last decoder with classification, Source: Jay Alammar, <a href="http://jalammar.github.io/illustrated-transformer/" target="_blank">The Illustrated Transformer</a>, 2019</figcaption>
+      </figure>
+    </section>
+    <section data-menu-title="Original Transformer">
+      <p class="heading-tertiary">Original Transformer</p>
+      <img src="assets/transformer-results.png" alt="Decoder output" class="r-stretch">
+      <figure>
+        <figcaption>Table 1: Variations on the Transformer architecture. Unlisted values are identical to those of the base
+          model, Source: Vaswani et al, <a href="https://arxiv.org/pdf/1706.03762.pdf" target="_blank">"Attention Is All You Need"</a>, NeurIPS 2017</figcaption>
+      </figure>
+    </section>
+    <section data-menu-title="We need to go bigger">
+      <img src="assets/bigger.jpg" alt="Decoder output" class="r-stretch">
+      <figure>
+        <figcaption>Source: <a href="https://imgflip.com/i/5a1wf7" target="_blank">imgflip</a></figcaption>
+      </figure>
+    </section>
+    <section data-menu-title="Bigger Transformers">
+      <p class="heading-secondary">Transformers...</p>
+      <table class="small">
+        <thead>
+        <tr>
+          <th class="tg-0pky">Model</th>
+          <th class="tg-0pky">Layers</th>
+          <th class="tg-0lax">Width</th>
+          <th class="tg-0lax">Heads</th>
+          <th class="tg-0lax">Params</th>
+          <th class="tg-0lax">Data</th>
+          <th class="tg-0lax">Training</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="tg-0pky">Transformer-Base</td>
+          <td class="tg-0pky">12</td>
+          <td class="tg-0lax">512</td>
+          <td class="tg-0lax">8</td>
+          <td class="tg-0lax">65M</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">8xP100 (12h)</td>
+        </tr>
+        <tr>
+          <td class="tg-0pky">Transformer-Large</td>
+          <td class="tg-0pky">12</td>
+          <td class="tg-0lax">1024</td>
+          <td class="tg-0lax">16</td>
+          <td class="tg-0lax">213M</td>
+          <td class="tg-0lax"></td>
+          <td class="tg-0lax">8xP100 (3.5d)</td>
+        </tr>
+        <tr class="fragment">
+          <td class="tg-0pky">GPT-2-XL</td>
+          <td class="tg-0pky">48</td>
+          <td class="tg-0lax">1600</td>
+          <td class="tg-0lax">25</td>
+          <td class="tg-0lax">1558M</td>
+          <td class="tg-0lax">40GB</td>
+          <td class="tg-0lax"></td>
+        </tr>
+        <tr class="fragment">
+          <td class="tg-0pky">Megatron-LM</td>
+          <td class="tg-0pky">72</td>
+          <td class="tg-0lax">3072</td>
+          <td class="tg-0lax">32</td>
+          <td class="tg-0lax">8300M</td>
+          <td class="tg-0lax">174GB</td>
+          <td class="tg-0lax">512x V100 (9d)</td>
+        </tr>
+        <tr class="fragment">
+          <td class="tg-0lax">GTP-3 175B</td>
+          <td class="tg-0lax">96</td>
+          <td class="tg-0lax">12888</td>
+          <td class="tg-0lax">96</td>
+          <td class="tg-0lax">175000M</td>
+          <td class="tg-0lax">45TB</td>
+          <td class="tg-0lax">355y on V100</td>
+        </tr>
+        </tbody>
+      </table><br/>
+      <figure>
+        <figcaption>Table 2: Transformer model comparison</figcaption>
+      </figure>
+    </section>
+
+    <section class="main-slide">
       <h2>Thanks</h2>
       <blockquote>"There's no such thing as a stupid question!"</blockquote>
       <p>
