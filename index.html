@@ -25,8 +25,16 @@
       <small>By Kemal Erdem</small>
     </section>
     <section data-menu-title="Sequence-to-Sequence translation using RNNs" data-background-iframe="https://erdem.pl/diagrams/rnn-diagram/">
+      <aside class="notes">
+        Works with short sentences only
+      </aside>
     </section>
     <section data-menu-title="Sequence-to-Sequence with Attention" data-background-iframe="https://erdem.pl/diagrams/rnn-with-attention/">
+      <aside class="notes">
+        - New context vector per each step<br/>
+        - how much h_1 is useful in predicting the output in the state s_0<br/>
+        - whole process is differentiable<br/>
+      </aside>
     </section>
     <section data-menu-title="Attention weights visualization">
       <p class="heading-secondary">Attention weights visualization</p>
@@ -34,8 +42,13 @@
       <figure>
         <figcaption>Figure 1: Attention weights for English to French translation, Source: <a href="https://arxiv.org/abs/1409.0473">Neural Machine Translation by Jointly Learning to Align and Translate</a></figcaption>
       </figure>
+      <aside class="notes">
+      </aside>
     </section>
     <section data-menu-title="Image Captioning with Attention" data-background-iframe="https://erdem.pl/diagrams/image-caption-with-attention/">
+      <aside class="notes">
+        - hidden state s_0 (sometimes it could be randomly generated or even set to 0)<br/>
+      </aside>
     </section>
     <section data-menu-title="Soft attention">
       <p class="heading-secondary">Soft attention</p>
@@ -50,8 +63,53 @@
       <figure>
         <figcaption>Figure 3: Hard attention visualization, white regions are the regions which model attends to, Source:  <a target="_blank" href="https://arxiv.org/abs/1502.03044">Show, Attend, and Tell: Neural Image Caption Generation with Visual Attention</a> </figcaption>
       </figure>
+      <aside class="notes">
+        - Caption has changed<br/>
+      </aside>
+    </section>
+    <section data-menu-title="Abstracting Attention Layer" >
+      <div data-markdown style="font-size: 2rem; line-height: 3.8rem">
+        - **Input vectors**: $\color{limegreen}{X}$ (shape $N_X \times D_X$)
+        - **Query vector**: $\color{mediumpurple}{q}$ (shape $D_Q$), this is our previous hidden state
+        - **Similarity function**: $f_{att}$
+        - **Similarities**: **e**, $e_i = f_{att}(\color{mediumpurple}{q}, \color{limegreen}{X_i})$
+        - **Attention weights**: $a = \text{softmax}(e)$ (shape $N_X$)
+        - **Output**: $\color{hotpink}{y} = \sum_i(a_i,\color{limegreen}{X_i})$
+      </div>
+      <div data-markdown style="font-size: 2rem; line-height: 1.2rem" class="fragment">
+        $f_{att}$ ---> **Scaled dot product**
+
+        $\vec{a} \cdot \vec{b} = |\vec{a}| * |\vec{b}| * cos(\theta)$
+
+        $e_i = \color{mediumpurple}{q} \cdot \color{limegreen}{X_i} / \sqrt{D_Q}$
+      </div>
+      <aside class="notes">
+        - Dot product change (why scaled)<br/>
+      </aside>
+    </section>
+    <section data-menu-title="Abstracting Attention Layer" >
+      <div data-markdown style="font-size: 2rem; line-height: 3.8rem">
+        - **Input vectors**: $\color{limegreen}{X}$ (shape $N_X \times D_X$)
+        - **Query vectors**: $\color{mediumpurple}{Q}$ (Shape $N_Q \times D_Q$)
+        - **Similarity function**: _scaled dot product_
+        - **Similarities**: $E = \color{mediumpurple}{Q}\color{limegreen}{X^T}$ (shape $N_Q \times N_X$), $E_{i,j} = \color{mediumpurple}{Q_i} \cdot \color{limegreen}{X_j} / \sqrt{D_Q}$
+        - **Attention weights**: $A = \text{softmax}(E, dim=1)$ (shape $N_Q \times N_X$)
+        - **Output**: $\color{hotpink}{Y} = A\color{limegreen}{X}$ (shape $N_Q \times D_X$) where $\color{hotpink}{Y_i} = \sum_j(A_{i,j},\color{limegreen}{X_j})$
+      </div>
+      <aside class="notes">
+        - softmax is calculated over dim=1<br/>
+        - probability distribution for every query vector over input vectors.<br/>
+        - computation of the similarity scores simplified to just matrix multiplication<br/>
+      </aside>
     </section>
     <section data-menu-title="Abstracting Attention Layer" data-background-iframe="https://erdem.pl/diagrams/attention-layer/">
+      <aside class="notes">
+        - Permutation Equivariant <br/>
+        - The key/value/query concepts come from retrieval systems. <br/>
+        - <b>query</b> to search for some video on Youtube, <br/>
+        - the search engine will map your query against a set of keys (video title, description, etc.) associated with candidate videos in the database, <br/>
+        - then present you the best matched videos (values).<br/>
+      </aside>
     </section>
     <section data-menu-title="Transformer Architecture">
       <p class="heading-secondary">Transformer Architecture</p>
@@ -79,6 +137,9 @@
       <figure>
         <figcaption>Figure 6: Masked Self-Attention Layer</figcaption>
       </figure>
+      <aside class="notes">
+        - Usually starts top-left corner<br/>
+      </aside>
     </section>
     <section data-menu-title="Multi-Headed Self-Attention">
       <p class="heading-tertiary">Multi-Headed Self-Attention</p>
